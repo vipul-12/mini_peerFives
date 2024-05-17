@@ -18,10 +18,10 @@ Runs the express server on port 8080.
 ## Dependancies/Libraries Used:
 
 1) `styled-components`
-For styling the app. [https://www.npmjs.com/package/styled-components](https://www.npmjs.com/package/styled-components)
+For styling the app.
 
 2) `axios`
-For api requests. [https://www.npmjs.com/package/axios](https://www.npmjs.com/package/axios)
+For api requests. 
 
 3) `sqlite3`
 For interacting with the sqlite3 database.
@@ -31,3 +31,7 @@ For enabling cors.
 
 5) `nodemon`
 To keep a persistent express server running.
+
+## Percentage Completion
+
+I was not able to display and delete the transactions :(.

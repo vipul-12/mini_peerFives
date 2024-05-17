@@ -74,8 +74,6 @@ const NewReward = () => {
     try {
       const response = await axios.get("http://localhost:8080/");
 
-      
-
       setState((state: NewRewardState) => ({
         ...state,
         users: response.data,
@@ -116,6 +114,10 @@ const NewReward = () => {
   };
 
   const handleSubmit = async () => {
+    if(state.theForm.givenTo === 0){
+      alert("SELECT A USER FIRST");
+      return;
+    }
     try {
       const response = await axios.post(
         "http://localhost:8080/addRewardTransaction",
@@ -136,13 +138,15 @@ const NewReward = () => {
         <label>
           Select User:
           <select
-            value={state.theForm.givenTo}
             defaultValue={filteredUsers.length > 0 ? filteredUsers[0].id : ""}
             onChange={handleSelectChange}
           >
+            <option value="" disabled>
+              Select an option
+            </option>
             {filteredUsers.map((item: UserObject, index: number) => (
               <option key={index} value={item.id}>
-                {item.id}
+                {item.id} : {item.name}
               </option>
             ))}
           </select>
